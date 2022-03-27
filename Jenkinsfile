@@ -56,6 +56,7 @@ podTemplate(yaml: '''
     if (env.BRANCH_NAME != "playground") {
       stage('Build Java Image') {
         container('kaniko') {
+          image_version = ":1.0"
           stage('Build a container') {
             if (env.BRANCH_NAME == "master") {
               image_version = ":1.0"
