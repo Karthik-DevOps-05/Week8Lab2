@@ -40,38 +40,6 @@ podTemplate(yaml: '''
         git branch: 'master', url: 'https://github.com/Karthik-DevOps-05/Week8Lab2.git'
         container('gradle') {
             try {
-              if(env.BRANCH_NAME != "playground") {
-                stage("Unit test") {
-                  sh '''
-                  ./gradlew test
-                  '''
-                }
-                if (env.BRANCH_NAME != "feature") {
-                stage("Code coverage!") {
-                        sh '''
-                            pwd
-                            ./gradlew jacocoTestReport
-                            ./gradlew jacocoTestCoverageVerification
-                        '''
-                    publishHTML (target: [
-                        reportDir: 'build/reports/jacoco/test/html',
-                        reportFiles: 'index.html',
-                        reportName: "JaCoCo Report"
-                    ])
-                    }
-                  }
-                stage("Static code analysis!") {
-                        sh '''
-                        pwd
-                        ./gradlew checkstyleMain
-                        '''
-                        publishHTML (target: [
-                            reportDir: 'build/reports/checkstyle/',
-                            reportFiles: 'main.html',
-                            reportName: "Checkstyle Report"
-                        ])
-                    }
-              }
                 stage('Build a gradle project!') {
                     sh '''
                     pwd
