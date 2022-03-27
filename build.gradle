@@ -44,6 +44,10 @@ jacocoTestCoverageVerification {
 	}
 }
 
+jacoco {
+    toolVersion = "0.8.6"
+}
+
 checkstyle {
 	checkstyleTest.enabled = false
 }
