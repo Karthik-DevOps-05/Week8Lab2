@@ -44,10 +44,6 @@ jacocoTestCoverageVerification {
 	}
 }
 
-jacoco {
-    toolVersion = "0.8.6"
-}
-
 checkstyle {
 	checkstyleTest.enabled = false
 }
@@ -71,3 +67,4 @@ flyway {
 	url = 'jdbc:h2:file:/tmp/calculator'
 	user = 'sa'
 }
+jacoco { toolVersion= "0.8.6"}
