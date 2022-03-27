@@ -71,7 +71,7 @@ podTemplate(yaml: '''
             ls /mnt/*jar
             mv /mnt/calculator-0.0.1-SNAPSHOT.jar .
             '''
-            sh "/kaniko/executor --context `pwd` --destination karthikkrish84/calculator1${image_version}"
+            sh "/kaniko/executor --context `pwd` --destination karthikkrish84/calculator2${image_version}"
           }
         }
       }
